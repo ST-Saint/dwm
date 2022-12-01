@@ -12,9 +12,11 @@ static const int focusonwheel       = 0;
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char* fonts[] = { "SauceCodePro Nerd Font Mono:size=12",
-                               "JoyPixels:size=12"
+static const char* fonts[] = {
+  "FontAwesome:size=16",
+  "SauceCodePro Nerd Font Mono:size=14",
 };
+
 /* static const char dmenufont[]       = "monospace:size=10"; */
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -40,7 +42,7 @@ static const Rule rules[] = {
         /* { "Firefox",          NULL,       NULL,       1 << 8,      0,              0,           -1 }, */
         { "Emacs",            NULL,       NULL,       1 << 1,      1,              0,           -1 },
         { "Google-chrome",    NULL,       NULL,       1 << 2,      1,              0,           -1 },
-        { "wechat.exe",       NULL,       NULL,       1 << 7,      1,              0,           -1 },
+        { "Wine",             NULL,       NULL,       1 << 7,      1,              0,           -1 },
         { "discord",          NULL,       NULL,       1 << 7,      1,              0,           -1 },
         { "slack",            NULL,       NULL,       1 << 7,      1,              0,           -1 },
 };
