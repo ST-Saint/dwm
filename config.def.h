@@ -86,8 +86,10 @@ static const Key keys[] = {
         { MODKEY,                       XK_Return, zoom,           {0} },
         { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
         { MODKEY,                       XK_b,      togglebar,      {0} },
-        { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-        { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+        { MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
+        { MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
+        { MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
+        { MODKEY|ShiftMask,             XK_k,      focusstackhid,  {.i = -1 } },
         { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
         { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
         { MODKEY|ControlMask,           XK_Left,   shiftview,      {.i = -1 } },
@@ -111,6 +113,9 @@ static const Key keys[] = {
         { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
         { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
         { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+        { MODKEY,                       XK_s,      show,           {0} },
+        { MODKEY|ShiftMask,             XK_s,      showall,        {0} },
+        { MODKEY,                       XK_h,      hide,           {0} },
         TAGKEYS(                        XK_1,                      0)
         TAGKEYS(                        XK_2,                      1)
         TAGKEYS(                        XK_3,                      2)
@@ -130,6 +135,7 @@ static const Button buttons[] = {
         /* click                event mask      button          function        argument */
         { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
         { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+        { ClkWinTitle,          0,              Button1,        togglewin,      {0} },
         { ClkWinTitle,          0,              Button2,        zoom,           {0} },
         { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
         { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
